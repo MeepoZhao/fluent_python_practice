@@ -10,7 +10,11 @@
 
 class Phone:
     brand = 'xiaomi'
-    price = 3999
+
+    # price = 3999
+
+    def __init__(self, price: int) -> None:  # 初始化动作，创建对象时会执行
+        self.price = price
 
     def call(self):
         print('self-------->', self)
@@ -20,7 +24,7 @@ class Phone:
         print('手机价格是:', self.price)
 
 
-phone1 = Phone()
+phone1 = Phone(2999)
 print(phone1)
 phone1.call()  # call(phone1)，此处类中函数定义的self指的是phone1
 phone1.price = 5000
