@@ -80,10 +80,17 @@ if __name__ == '__main__':
     # print(Order(ann, cart, fidelity_promo))
 
     # 计算最佳折扣
-    promos = [fidelity_promo, bulk_item_promo, large_order_promo]
+    # promos = [fidelity_promo, bulk_item_promo, large_order_promo]
+    # 利用globals()获取全局符号表，然后将满足一定规则的变量放到列表中
+    # globals()[name] 用于将str变为变量名
+    promos = [globals()[name] for name in globals()
+              if name.endswith('_promo')
+              and name != 'best_promo']
 
 
     def best_promo(order: Order):
         return max(promo(order) for promo in promos)
 
+
     print(Order(ann, cart, best_promo))
+
