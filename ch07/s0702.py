@@ -13,6 +13,7 @@ Python执行装饰器的时间
 registry = []
 
 
+# 实际使用过程中，装饰器的定义会放到一个单独的模块中
 def register(func):
     print('running register(%s)' % func)
     registry.append(func)
