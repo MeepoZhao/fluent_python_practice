@@ -3,7 +3,7 @@
 # Create by MeepoZhao
 # Create on 2022/4/21
 
-from s0608 import Order
+from ch06.s0608 import Order
 
 
 # 实现各个promotion的函数
